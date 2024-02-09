@@ -15,3 +15,11 @@ git remote set-head origin -a
 git log
 git show 02kkjdi..
 ```
+### Edit files are at staging area than use reset command 
+```
+git add .
+git status
+git reset Head file.txt
+git status
+this file will be moved to workspace
+```
