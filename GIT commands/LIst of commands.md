@@ -11,3 +11,7 @@ git fetch origin
 git branch -u origin/master master
 git remote set-head origin -a
 ```
+```
+git log
+git show 02kkjdi..
+```
