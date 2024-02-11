@@ -3,7 +3,10 @@
 ```
 git add .
 git commit -m "ok"
+git remote -v
+git remote add origin https://github.com/vemulakonda123/GIT-Doc.git
 git remote set-url origin https://<token>@github.com/<username>/<repo>
+git push -u origin main 
 ```
 ```
 git branch -m main master
