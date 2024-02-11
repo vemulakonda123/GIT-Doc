@@ -35,7 +35,7 @@ git merge <branch_name>
 git log --graph --oneline --decorate --all
 
 ```
-
+```
 git config --global user.name "Your Name"
 git config --global user.email "your_email@example.com"
 ###Set default editor:
@@ -59,9 +59,9 @@ This displays the configured user name.
 ###Edit the Git configuration file directly:
 git config --global --edit
 Opens the Git configuration file in your default text editor, allowing you to make manual changes.
+```
 
-
-
+```
 ##Git troubleshooting commands
 git status: This command shows the status of the working directory and staging area. It helps identify which files are staged, unstaged, or untracked.
 
@@ -84,3 +84,4 @@ git clean -n: This command shows a preview of the untracked files in the working
 git fsck: Use this command to perform a filesystem check on the Git repository. It helps identify any integrity issues with the repository objects.
 
 git bisect: This command helps find the commit that introduced a bug by performing a binary search through the commit history. It requires marking known "good" and "bad" commits to narrow down the problematic commit.
+```
