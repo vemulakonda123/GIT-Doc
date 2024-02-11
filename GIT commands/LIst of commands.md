@@ -23,11 +23,18 @@ git reset Head file.txt
 git status
 this file will be moved to workspace
 ```
+
 ```
 git branch
 git branch new-branch
 git checkout new-branch
 git checkout -b new-branch
+git branch -d <branch_name>   #delete branch
+git branch -m <old_branch_name> <new_branch_name>
+git merge <branch_name>
+git log --graph --oneline --decorate --all
+
+
 
 
 ```
