@@ -1,6 +1,15 @@
 #AUTHOR:
 #
 ```
+echo "# filerep" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main -----------renamming the name of master
+git remote add origin https://github.com/vemulakonda123/filerep.git
+git push -u origin main
+```
+```
 git add .
 git commit -m "ok"
 ```
