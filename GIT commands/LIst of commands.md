@@ -49,6 +49,10 @@ git merge <branch_name>
 git log --graph --oneline --decorate --all
 
 ```
+##when conflict occures than make changes use this command
+```
+git merge --abort
+```
 ```
 git config --global user.name "Your Name"
 git config --global user.email "your_email@example.com"
