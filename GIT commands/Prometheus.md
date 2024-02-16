@@ -8,3 +8,6 @@ https://jhooq.com/prometheous-grafan-setup/
 ```
 https://jhooq.com/prometheous-k8s-aws-setup/
 ```
+```
+6417 dash board is good for k8s monitoring in grafana 
+```
