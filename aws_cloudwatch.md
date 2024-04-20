@@ -20,7 +20,7 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-c
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status
 ```
 
-## Value for the SSM Parameter (/alarm/AWS-CWAgentLinConfig):
+## Value for the SSM Parameter (/alarm/AWS-CWAgentLinConfig):  >>>> for memory
 ```bash
 {
 	"metrics": {
@@ -38,6 +38,61 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a 
 	}
 }
 ```
+## Value for the SSM Parameter (/alarm/AWS-CWAgentLinConfig): >>>>for memory and disk utlization
+```
+{
+	"metrics": {
+		"append_dimensions": {
+			"InstanceId": "${aws:InstanceId}"
+		},
+		"metrics_collected": {
+			"mem": {
+				"measurement": [
+					"mem_used_percent"
+				],
+				"metrics_collection_interval": 60
+			},
+            "disk": {
+				"measurement": [
+                     "disk_used_percent"
+				],
+				"metrics_collection_interval": 60
+			}
+		}
+	}
+}
+```
+## for multiple instance 
+```
+{
+	"metrics": {
+		"append_dimensions": {
+			"InstanceId": "${aws:InstanceId}",
+			"InstanceType": "${aws:InstanceType}",
+			"Region": "${aws:Region}"
+		},
+		"metrics_collected": {
+			"mem": {
+				"measurement": [
+					"mem_used_percent"
+				],
+				"metrics_collection_interval": 60
+			},
+            "disk": {
+				"measurement": [
+                     "disk_used_percent"
+				],
+				"metrics_collection_interval": 60
+			}
+		}
+	}
+}
+
+```
+
+
+
+
 ## Reference/Additional Reading:
 1. https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent-New-Instances-CloudFormation.html
 2. https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Agent-Configuration-File-Details.html
