@@ -325,7 +325,34 @@ Exit status of 'ls' command: 2
 ```
 In this example, ls is used to list a file (non_existent_file.txt) that does not exist.
 When you run this script, the ls command will fail, and $? will hold a non-zero value corresponding to the failure.
-The output will be something like:
+
+## stat command for file
+```
+ubuntu@ip-10-0-0-55:~$ stat file_du.txt
+  File: file_du.txt
+  Size: 134             Blocks: 8          IO Block: 4096   regular file
+Device: ca01h/51713d    Inode: 258383      Links: 1
+Access: (0664/-rw-rw-r--)  Uid: ( 1000/  ubuntu)   Gid: ( 1000/  ubuntu)
+Access: 2024-04-25 15:44:49.910278318 +0000
+Modify: 2024-04-25 15:44:49.906278389 +0000
+Change: 2024-04-25 15:44:49.906278389 +0000
+ Birth: 2024-04-25 15:15:17.654056420 +0000
+```
+## deleteing oldfile which are older than 30days
+```
+1 #!/bin/bash
+  2 echo "deleting files which are older than 30days"
+  3 path="$1"
+  4 echo "$path"
+  5 find $path -mtime +30 -delete  #here $1 is first argument we provide
+  6 if [ $? -eq 0 ];
+  7 then
+  8         echo "files are successfully deleted"
+  9 else
+ 10         echo "not deleted"
+ 11 fi
+
+```
 
 
 
