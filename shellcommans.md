@@ -237,4 +237,116 @@ else
 	echo "not installing"
 fi
 ```
+## print highest utlized directory
+```
+du -h /home/ubuntu|sort -hr|head -1
+```
+## 
+![image](https://github.com/vemulakonda123/GIT-Doc/assets/50296141/2c754a49-8aaf-4eb9-aefc-1c1ce3ef01f1)
+## $1
+myscript.sh
+```
+#!/bin/bash
+echo "The first argument is: $1"
+```
+When you run this script from the command line and provide an argument, like so:
+```
+./myscript.sh argument1
+```
+output:::  The first argument is: argument1
+## $1 $2
+Let's modify the myscript.sh script to display both the first and second arguments:
+```
+#!/bin/bash
+echo "The first argument is: $1"
+echo "The second argument is: $2"
+```
+```
+./myscript.sh argument1 argument2
+```
+output:::: 
+```
+The first argument is: argument1
+The second argument is: argument2
+```
+### $0
+```
+In shell scripting, $0 represents the name of the script itself or the name of the function
+#!/bin/bash
+echo "The name of this script is: $0"
+=================================
+./myscript.sh
+=================================
+The name of this script is: ./myscript.sh
+```
+## $@
+print_args.sh
+```
+In shell scripting, $@ represents all the positional parameters passed to the script or function as separate quoted strings.
+#!/bin/bash
+echo "All arguments passed to the script:"
+echo "$@"
+==========
+./print_args.sh arg1 arg2 arg3
+=========
+All arguments passed to the script:
+arg1 arg2 arg3
+```
+## $#
+count_args.sh
+```
+In shell scripting, $# represents the number of positional parameters passed to the script
+#!/bin/bash
+echo "Number of arguments passed to the script: $#"
+=======================
+./count_args.sh arg1 arg2 arg3
+===============
+Number of arguments passed to the script: 3
+```
+## $$
+In shell scripting, $$ represents the process ID (PID) of the current shell instance.
+```
+#!/bin/bash
+echo "The process ID of this shell script is: $$"
+===========
+./script.sh
+==============
+The process ID of this shell script is: 12345
+```
+## $?
+In shell scripting, $? represents the exit status of the last command that was executed
+```
+#!/bin/bash
+ls non_existent_file.txt
+echo "Exit status of 'ls' command: $?"
+================
+ls: cannot access 'non_existent_file.txt': No such file or directory
+Exit status of 'ls' command: 2
+```
+In this example, ls is used to list a file (non_existent_file.txt) that does not exist.
+When you run this script, the ls command will fail, and $? will hold a non-zero value corresponding to the failure.
+The output will be something like:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
