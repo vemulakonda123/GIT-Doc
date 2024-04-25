@@ -338,14 +338,14 @@ Modify: 2024-04-25 15:44:49.906278389 +0000
 Change: 2024-04-25 15:44:49.906278389 +0000
  Birth: 2024-04-25 15:15:17.654056420 +0000
 ```
-## deleteing oldfile which are older than 30days
+## deleting oldfiles which are older than 30days
 ```
 1 #!/bin/bash
   2 echo "deleting files which are older than 30days"
   3 path="$1"
   4 echo "$path"
   5 find $path -mtime +30 -delete  #here $1 is first argument we provide
-  6 if [ $? -eq 0 ];
+  6 if [ $? -eq 0 ];		# here $? is the status of previous command ,if it is 0 than output is successfull rather than that it was not successful
   7 then
   8         echo "files are successfully deleted"
   9 else
@@ -353,7 +353,21 @@ Change: 2024-04-25 15:44:49.906278389 +0000
  11 fi
 
 ```
-
+## wget prometheus and extract
+we need to install prometheus software in our system,but we need to first check that if the file exists are not ,
+if already exists then it will not downloaded, it just installs the same...
+```
+#!/bin/bash
+if [ -e /home/ubuntu/prometheus-2.51.2.linux-amd64.tar.gz ]; then
+        echo "promethus file is present just you need to extract"
+        tar -xvzf /home/ubuntu/prometheus-2.51.2.linux-amd64.tar.gz
+else
+        echo "download and extract"
+        wget https://github.com/prometheus/prometheus/releases/download/v2.51.2/prometheus-2.51.2.linux-amd64.tar.gz
+        tar -xvzf /home/ubuntu/prometheus-2.51.2.linux-amd64.tar.gz
+        echo "file was extracted and installed"
+fi
+```
 
 
 
