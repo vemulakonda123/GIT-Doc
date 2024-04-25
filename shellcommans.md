@@ -205,3 +205,36 @@ fi
 
 These examples demonstrate various ways to use "if" conditions in shell scripting to make decisions based on different conditions.
 
+
+## Disk space filtering
+```
+#!/bin/bash
+disk_space=`df -h|grep "/dev/root"|awk '{print $5}'|cut -d '%' -f1`
+echo "$disk_space"
+if [ $disk_space -gt 50 ];
+then
+        echo "$disk_space is more than 50%"
+elif [ $disk_space -lt 50 ];
+then
+        echo "$disk_space is less than 50%"
+else
+        echo "nothing"
+fi
+```
+## selectcing machine and install git 
+```
+#!/bib/bash
+echo "script to install git "
+if ["$(uname)" == "linux"];
+than 
+	echo "this is linux mechin, installing git"
+	yum install git -y
+elif [ "$(uname)" == "Darwin" ];
+than
+	echo "this is macos"
+	brew install git
+else
+	echo "not installing"
+fi
+```
+
