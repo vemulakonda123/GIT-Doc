@@ -68,4 +68,16 @@ ubuntu@ip-10-0-0-55:~$ systemctl status apache2 | awk 'NR==3 {print}'|cut -d ':'
  active
 ubuntu@ip-10-0-0-55:~$
 ```
+## 5) Added to crontab to check every minite ,when service is stoped it automatically starts
+```
+ubuntu@ip-10-0-0-55:~$ crontab -l
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+#
+# For more information see the manual pages of crontab(5) and cron(8)
+#
+# m h  dom mon dow   command
+* * * * * /home/ubuntu/httpd-status.sh
+```
 
