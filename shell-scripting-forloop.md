@@ -119,3 +119,30 @@ ubuntu@ip-10-0-0-55:~$ crontab -l
  34 done
  ```
 
+### Read command in shell with flages
+```
+root@ip-10-0-0-55:/home/ubuntu# read -a fruits
+apple jjk ppp
+
+root@ip-10-0-0-55:/home/ubuntu# echo $fruits
+apple
+root@ip-10-0-0-55:/home/ubuntu# echo "${fruits[0]}, ${fruits[1]}, ${fruits[2]}"
+apple, jjk, ppp
+```
+```
+root@ip-10-0-0-55:/home/ubuntu# read -s -p "Enter your password: " password
+Enter your password: 
+root@ip-10-0-0-55:/home/ubuntu# echo $password
+mypassword-was -hidden
+#Here -s will hidd
+```
+```
+read -n 4 -p "Enter a 4-character code: " code
+echo "Code entered: $code"
+#here -n 4 represent that it will take only 4 char or number 
+```
+
+![image](https://github.com/vemulakonda123/GIT-Doc/assets/50296141/d3e51508-dc90-47c1-b400-89679547b987)
+```
+### "read <options> <arguments>"
+```
