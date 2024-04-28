@@ -146,3 +146,27 @@ echo "Code entered: $code"
 ```
 ### "read <options> <arguments>"
 ```
+### writting content into test.txt file
+```
+#!/bin/bash
+echo "while loop demo..."
+while read -r line;
+do
+        echo "$line"
+done > test.txt
+```
+
+## status check
+## give inputs like docker, apache2...
+## which will tell weather they are running or not
+```
+#!/bin/bash
+echo "service status check script"
+read -p "Enter service name to check:" service_name
+if [ -z $service_name ];
+then
+        echo "please provide any service name "
+else
+        systemctl status $service_name
+fi
+```
