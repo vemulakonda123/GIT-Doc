@@ -80,4 +80,42 @@ ubuntu@ip-10-0-0-55:~$ crontab -l
 # m h  dom mon dow   command
 * * * * * /home/ubuntu/httpd-status.sh
 ```
+## Installing multiple softwares 
+## Very simple and easy
+```
+ 1 #!/bin/bash
+  2 #Author: hhv
+  3 #Installing multiple packages
+  4
+  5 if [ $# -eq 0 ]
+  6 then
+  7         echo "Usage:please provide software names as command line arguments"
+  8         echo "$#"
+  9         exit 1
+ 10 fi
+ 11
+ 12 if [[ $(id -u) -ne 0 ]]
+ 13 then
+ 14         echo "please run from root user or with sudo privilage"
+ 15         exit 2
+ 16 fi
+ 17
+ 18
+ 19 for software in $@
+ 20 do
+ 21         if which $software &> /dev/null
+ 22         then
+ 23            echo "Already $software is installed"
+ 24         else
+ 25           echo "installing $software...."
+ 26           apt-get install $software -y &> /dev/null
+ 27           if [[ $? -eq 0 ]]
+ 28           then
+ 29                   echo "successfully installed $software package"
+ 30           else
+ 31                   echo "unable to install $software"
+ 32         fi
+ 33         fi
+ 34 done
+ ```
 
