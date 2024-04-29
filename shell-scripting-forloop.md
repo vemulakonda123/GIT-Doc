@@ -170,3 +170,76 @@ else
         systemctl status $service_name
 fi
 ```
+
+## grep command 
+![image](https://github.com/vemulakonda123/GIT-Doc/assets/50296141/99a9033f-3073-4cd5-84cb-f9e5c56c79ae)
+```
+root@ip-10-0-0-55:~# vi grep-command.txt
+=================
+root@ip-10-0-0-55:~# grep devops grep-command.txt
+When you the devops is boom
+devops is the courece
+the moo to devops
+=================
+root@ip-10-0-0-55:~# grep -i devops grep-command.txt
+Devops is good
+we will filter DEVOPS
+When you the devops is boom
+you are low to Devops
+devops is the courece
+the moo to devops
+DEVOPS is boom
+root@ip-10-0-0-55:~# grep -c devops grep-command.txt
+3
+===========
+root@ip-10-0-0-55:~# grep -ic devops grep-command.txt
+7
+==============
+root@ip-10-0-0-55:~# grep -o devops grep-command.txt
+devops
+devops
+devops
+==============
+root@ip-10-0-0-55:~# grep -w devops grep-command.txt
+When you the devops is boom
+devops is the courece
+the moo to devops
+==================
+root@ip-10-0-0-55:~# grep -n devops grep-command.txt
+4:When you the devops is boom
+6:devops is the courece
+7:the moo to devops
+================
+root@ip-10-0-0-55:~# grep -in devops grep-command.txt
+1:Devops is good
+3:we will filter DEVOPS
+4:When you the devops is boom
+5:you are low to Devops
+6:devops is the courece
+7:the moo to devops
+8:DEVOPS is boom
+====================
+root@ip-10-0-0-55:~# grep -v devops grep-command.txt
+Devops is good
+by using grep command
+we will filter DEVOPS
+you are low to Devops
+DEVOPS is boom
+========================
+root@ip-10-0-0-55:~# grep -iv devops grep-command.txt
+by using grep command
+root@ip-10-0-0-55:~#
+```
+
+## ERROR CHECK in log file
+```
+matched_error=`grep -i error /var/log/messages`
+echo $matched_error
+if [[ $? -eq 0 ]];
+then
+	echo "found error in os logs: $matched_error "
+else
+	echo "no error in message logs"
+fi
+```
+
