@@ -38,3 +38,23 @@ case $choise in
                 echo "wrong choise"
                 ;;
 ```
+
+## Here we using disk_utilization()	function to re use it
+```
+#!/bin/bash
+echo "Here we are implementing functions"
+
+disk_utilization()		# this is a function
+{
+disk=`df -h`
+echo "disk utilization is : $disk  "
+}
+
+if [[ $?  -eq  0 ]];
+then 
+	echo "this is disk usage"
+	disk_utilization		## above function was called
+else
+	echo "disk has some issue to print"
+fi
+```
