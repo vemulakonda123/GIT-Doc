@@ -1,5 +1,9 @@
 #AUTHOR:
-#
+## initial command in github
+![image](https://github.com/vemulakonda123/GIT-Doc/assets/50296141/545bcaca-beb3-41bc-85ab-e869498f5d38)
+
+
+
 ```
 echo "# filerep" >> README.md
 git init
