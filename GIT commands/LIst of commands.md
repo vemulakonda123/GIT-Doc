@@ -107,3 +107,80 @@ git fsck: Use this command to perform a filesystem check on the Git repository. 
 
 git bisect: This command helps find the commit that introduced a bug by performing a binary search through the commit history. It requires marking known "good" and "bad" commits to narrow down the problematic commit.
 ```
+
+
+## git tag
+
+Sure, let me provide you with some examples of how to use Git tags:
+
+1. **Creating Lightweight Tags:**
+
+   You can create a lightweight tag in Git simply by providing a name for the tag. Lightweight tags are essentially pointers to specific commits.
+
+   ```bash
+   git tag v1.0
+   ```
+
+   This command creates a lightweight tag named `v1.0` pointing to the current commit.
+
+2. **Creating Annotated Tags:**
+
+   Annotated tags are like lightweight tags, but they store extra information such as tagger name, email, date, and a tagging message. 
+
+   ```bash
+   git tag -a v1.0 -m "Release version 1.0"
+   ```
+
+   This command creates an annotated tag named `v1.0` with the message "Release version 1.0".
+
+3. **Pushing Tags to Remote:**
+
+   By default, Git doesn't push tags to the remote repository. You need to explicitly push tags if you want them to be available in the remote repository.
+
+   ```bash
+   git push origin v1.0
+   ```
+
+   This command pushes the tag `v1.0` to the remote repository named `origin`.
+
+4. **Deleting Tags:**
+
+   To delete a tag, use the `-d` option followed by the tag name.
+
+   ```bash
+   git tag -d v1.0
+   ```
+
+   This command deletes the tag `v1.0` from your local repository.
+
+5. **Deleting Tags from Remote:**
+
+   To delete a tag from the remote repository, you need to push an empty tag with the same name.
+
+   ```bash
+   git push origin :refs/tags/v1.0
+   ```
+
+   This command pushes an empty tag named `v1.0` to the remote repository, effectively deleting it.
+
+6. **Listing Tags:**
+
+   You can list all tags in your repository using the `git tag` command.
+
+   ```bash
+   git tag
+   ```
+
+   This command lists all tags in your local repository.
+
+7. **Checkout a Specific Tag:**
+
+   You can checkout a specific tag to inspect the code at that particular version.
+
+   ```bash
+   git checkout v1.0
+   ```
+
+   This command checks out the code at the commit pointed to by the tag `v1.0`. You'll be in a "detached HEAD" state, meaning any changes you make won't be on a branch.
+
+These are some common examples of how to use Git tags. Tags are useful for marking significant points in your project's history, such as releases or milestones.
