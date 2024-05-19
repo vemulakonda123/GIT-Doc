@@ -19,7 +19,12 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-c
 ```bash
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a status
 ```
-
+```
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a start
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a restart
+-m ec2: Specifies the mode in which the CloudWatch Agent is running. In this case, it is running on an EC2 instance.
+-a status: The -a option specifies the action to perform. status checks the current status of the CloudWatch Agent.
+```
 ## Value for the SSM Parameter (/alarm/AWS-CWAgentLinConfig):  >>>> for memory
 ```bash
 {
