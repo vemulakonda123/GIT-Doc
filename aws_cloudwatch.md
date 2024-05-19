@@ -1,5 +1,5 @@
 # AWS EC2 Monitoring with Cloudwatch | Monitor Memory Utilization using CloudWatch | AWS CloudWatch Demo
-
+## AWS Systems Manager allows you to safely automate common and repetitive IT operations and management tasks across multiple accounts and AWS Regions.
 ## Steps:
 
 ### Step 1: Create an IAM and Attach CloudWatch and SSM Full Access - EC2-CloudWatch-Role
