@@ -57,9 +57,9 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a 
 				],
 				"metrics_collection_interval": 60
 			},
-           	 "disk": {
+           		 "disk": {
 				"measurement": [
-                     "disk_used_percent"
+                    			 "disk_used_percent"
 				],
 				"metrics_collection_interval": 60
 			}
@@ -83,7 +83,7 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a 
 				],
 				"metrics_collection_interval": 60
 			},
-                "disk": {
+               		 "disk": {
 				"measurement": [
                                      "disk_used_percent"
 				],
